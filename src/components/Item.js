@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './Item.css';
+import React, { Component } from "react";
+import "./Item.css";
 
 class Item extends Component {
   render() {
@@ -10,12 +10,15 @@ class Item extends Component {
           <input
             type="checkbox"
             checked={item.packed}
-            onChange={() => {}}
+            onChange={() => this.props.onToggle(item)}
             id={item.id}
           />
           {item.value}
         </label>
-        <button className="Item-remove" onClick={() => {}}>
+        <button
+          className="Item-remove"
+          onClick={() => this.props.onRemove(item)}
+        >
           Remove
         </button>
       </article>
